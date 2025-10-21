@@ -3,12 +3,6 @@ import { defineNuxtRouteMiddleware, navigateTo } from "nuxt/app";
 export default defineNuxtRouteMiddleware((to, from) => {
   const hasTrailingSlash = to.path !== "/" && to.path.endsWith("/");
 
-  console.log("to");
-  console.log(to);
-
-  console.log("from");
-  console.log(from);
-
   if (hasTrailingSlash) {
     const newPath = to.path.slice(0, -1);
 
