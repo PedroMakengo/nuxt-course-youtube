@@ -14,11 +14,7 @@
         </header>
 
         <div class="flex flex-wrap gap-4 justify-center">
-          <div
-            v-for="(currentCharacter, index) in data.results"
-            :key="index"
-            class="bg-[#313234] rounded-lg flex gap-4 flex-col p-4 w-full max-w-[294px]"
-          >
+          <Card v-for="(currentCharacter, index) in data.results" :key="index">
             <img
               :src="currentCharacter.image"
               height="200"
@@ -42,15 +38,8 @@
                 <IconsHeartOutlined v-else />
               </span>
             </div>
-            <NuxtLink
-              :to="currentCharacter.url"
-              target="_blank"
-              class="self-end bg-[#11b0c8] flex gap-2 py-[6px] pl-1 pr-2 rounded-[32px] text-sm items-center mt-auto"
-            >
-              <IconsInfo />
-              Saiba Mais
-            </NuxtLink>
-          </div>
+            <SeeDocumentDetails :to="currentCharacter.url" />
+          </Card>
         </div>
       </div>
     </section>
