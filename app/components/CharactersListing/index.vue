@@ -24,7 +24,11 @@
               </div>
             </div>
             <span>
-              <IconsHeartFilled v-if="currentCharacter.status === 'Alive'" />
+              <IconsHeartFilled
+                :width="48"
+                :height="48"
+                v-if="currentCharacter.status === 'Alive'"
+              />
               <IconsHeartOutlined v-else />
             </span>
           </div>
